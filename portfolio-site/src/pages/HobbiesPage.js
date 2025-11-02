@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import Hero from '../components/Hero';
 import GridLayout from '../components/GridLayout';
 import LoadContent from '../components/LoadContent';

@@ -1,12 +1,10 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Hero from '../components/Hero';
 import GridLayout from '../components/GridLayout';
 import LoadContent from '../components/LoadContent';
 import {Helmet} from 'react-helmet';
-
-import Android from '../assests/images/android.svg';
 
 function PortfolioMainPage(props){
     return(

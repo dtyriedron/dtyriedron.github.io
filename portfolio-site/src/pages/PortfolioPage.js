@@ -17,27 +17,27 @@ function PortfolioPage(props){
     const [description, setDescription] = useState('');
     const [language, setLanguage] = useState('');
 
+    const setData = (
+        array,
+    ) => {
+        console.log(array)
+        setName("jam");  //array[param].name
+        setDescription("damson"); //array[param].description
+        // fetch(`https://api.github.com/repos/dtyriedron/${array[param].name}/languages`)
+        // .then(res => res.json())
+        // .then(languages => {
+        //     setLanguages(languages);     
+        // });
+    };
+
     useEffect(() => {
         fetch('https://api.github.com/users/dtyriedron/repos')
         .then(res => res.json())
         .then(data => {
             setData(data);     
         });
-
+// eslint-disable-next-line
     }, []);
-
-    const setData = (
-        array,
-    ) => {
-        console.log(array)
-        setName(array[param].name);
-        setDescription(array[param].description);
-        fetch(`https://api.github.com/repos/dtyriedron/${array[param].name}/languages`)
-        .then(res => res.json())
-        .then(languages => {
-            setLanguages(languages);     
-        });
-    };
 
     const setLanguages = (
         object,

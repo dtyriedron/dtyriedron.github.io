@@ -8,7 +8,8 @@ class LoadContent extends React.Component{
     };
 
     componentDidMount(){
-        for (const [index, value] of this.props.urls.entries()) {
+        // eslint-disable-next-line
+        for (const [ index, value ] of this.props.urls.entries()) {
             fetch(value)
             .then(res => res.json())
             .then((data) => this.setState({ data, loading: false }))

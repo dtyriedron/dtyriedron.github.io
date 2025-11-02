@@ -17,7 +17,7 @@ function AboutPage(props){
             <Hero title={props.title}/>
 
             <Content>
-                <Typography variant="subtitle1" color="secondary"> Hello, my name is Dylan. I am a full stack software engineer with experience in Java, Android, C++, C#, Arduino, HTML, ReactJS, Ada, C, CSS, JavaScript, Python and Haskell. </Typography>
+                <Typography variant="subtitle1" color="secondary"> Hello, my name is Dylan. I am a full stack software engineer with experience in Java, Android, C++, Ada, C#, Arduino, Baremetal Embedded (Giant Gecko), HTML, ReactJS, C, CSS, JavaScript, Python and Haskell. </Typography>
             </Content>
         </div>
     );

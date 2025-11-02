@@ -15,10 +15,7 @@ import List from '@material-ui/core/List';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import { useTheme } from "@material-ui/core/styles";
 import {Helmet} from 'react-helmet';
 
 import AboutIcon from "@material-ui/icons/Info";
@@ -41,11 +38,9 @@ import Home from './pages/HomePage';
 import About from './pages/AboutPage';
 // import Contact from './pages/ContactPage';
 import Portfolio from './pages/PortfolioMainPage';
-import Project from './pages/PortfolioPage';
 import Achievements from './pages/AchievementsPage';
 import Hobbies from './pages/HobbiesPage';
-import Achievement from './pages/Achievement';
-import Hobby from './pages/Hobby';
+import Project from './pages/PortfolioPage';
 
 const drawerWidth = 240;
 
@@ -146,7 +141,6 @@ function App(){
       }
     }
   });
-  const theme = useTheme();
 
   const handleThemeChange = () => {
     setDarkState(!darkState);
@@ -160,7 +154,7 @@ function App(){
     setOpen(false);
   };
 
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  clsx(classes.paper, classes.fixedHeight);
 
   const mainListItems = (
     <div>
@@ -261,8 +255,8 @@ function App(){
                   <Route path={process.env.PUBLIC_URL + '/portfolio'} render={()=> <Portfolio title='My Projects!' />}/>
                   <Route path={process.env.PUBLIC_URL + '/achievements'} render={()=> <Achievements title='My Achievements!'/>}/>
                   <Route path={process.env.PUBLIC_URL + '/hobbies'} render={()=> <Hobbies title='My Interests!' />}/>
+                  <Route path={process.env.PUBLIC_URL + '/project'} render={()=> <Project />}/>
                   {/* <Route path={process.env.PUBLIC_URL + '/contact'} render={()=> <Contact title={this.state.contact.title}/>}/>
-                  {/* <Route path={process.env.PUBLIC_URL + '/project'} render={()=> <Project />}/>
                   <Route path={process.env.PUBLIC_URL + '/achievement'} render={() => <Achievement/>}/>
                   <Route path={process.env.PUBLIC_URL + '/hobby'} render={() => <Hobby/>}/> */}
                 </Grid>              

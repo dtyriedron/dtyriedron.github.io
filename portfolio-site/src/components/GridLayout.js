@@ -6,14 +6,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { BrowserRouter, Route, Link, Redirect, NavLink} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
 
 import Project from '../pages/PortfolioPage';
 // import Achievement from '../Achievement.js';
 // import Hobby from '../Hobby.js';
-
-
-import Trail from '../components/Trail';
 
 function GridLayout(props){
     // function handleClick(pos) {     
@@ -52,7 +49,7 @@ function GridLayout(props){
                                             </Link>
                                             <Route path = {process.env.PUBLIC_URL + `/${props.page}/?pos=${pos}`}>
                                             {/* render={()=> <Project pos={pos}/>} */}
-                                            <Project />
+                                            <Project pos={pos} name={card.name} description={card.description} />
                                             </Route>
                                         </CardActions>
                                     </Card>

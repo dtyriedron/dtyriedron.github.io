@@ -1,7 +1,6 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { useTheme } from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -12,7 +11,6 @@ import InfoIcon from '@material-ui/icons/Info';
 import {Helmet} from 'react-helmet';
 
 import Hero from '../components/Hero';
-import Carousel from '../components/Carousel';
 import LoadContent from '../components/LoadContent.js';
 
 // import Config from '../config.js';
@@ -41,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
 
 function HomePage(props){
     const classes = useStyles();
-    const theme = useTheme();
 
     const cardClicked = (link) => {
         const newWindow = window.open(link, '_blank', 'noopener,noreferrer')
