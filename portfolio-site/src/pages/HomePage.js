@@ -1,102 +1,90 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
+import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 import tileData from '../assests/data/tileData';
-import InfoIcon from '@material-ui/icons/Info';
 import {Helmet} from 'react-helmet';
+import '../index.css';
 
 import Hero from '../components/Hero';
-import LoadContent from '../components/LoadContent.js';
-
-// import Config from '../config.js';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    root: 
+    {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
     },
-    gridList: {
+    imageList: 
+    {
       flexWrap: 'nowrap',
       // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
       transform: 'translateZ(0)',
+      margin: 'auto',
+      justifyContent: 'center',
+      justifySelf: 'center',
+      height: '75%%',
+      width: '25%'
     },
-    title: {
+    title: 
+    {
       color: theme.palette.primary.light,
     },
-    titleBar: {
+    titleBar: 
+    {
       background:
         'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
     },
+    Hero: 
+    {
+      height: "25%",
+    },
+    image:
+    {
+      display: 'block',
+      // "&:hover":
+      // {
+      //   cursor: 'pointer',
+      //   transition: '.5s ease',
+      //   backgroundColor: '#fffff'
+      // },
+    },
   }));
 
-function HomePage(props){
-    const classes = useStyles();
+function HomePage(props)
+{
+  const classes = useStyles();
 
-    const cardClicked = (link) => {
-        const newWindow = window.open(link, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-      };
+  const cardClicked = (link) => {
+    const newWindow = window.open(link, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  };
 
-    return(
-        <div>
-            <Helmet>
-                <title>Dylan Tyrie-Dron: My home page!</title>
-                <meta name="description" content="A carosel of interactive cards that will direct to social channels used to connect with me!"></meta>
-            </Helmet>
 
-            <LoadContent urls={[
-                "https://www.instagram.com/doseofdylz/?__a=1",
-            ]}>
-            {
-            ({ loading, error, data }) => {
-
-                if (loading) return (
-                    <div>
-                        <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>
-                            <Grid container>
-                                <Grid item container className="justify-content-center">
-                                    <CircularProgress className="justify-content-center" animation="border"/>
-                                </Grid>
-                            </Grid>
-                    </div>
-                );
-                if (error) return <span>Error loading</span>
-
-                return(
-                    <div>  
-                        <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>                      
-                        {/* <Carousel insta={data} /> */}
-                        <GridList className={classes.gridList}>                          
-                            {tileData.map((tile) => (
-                            <GridListTile key={tile.title} cols={0.5} style={{height:'auto'}}>
-                                <img src={tile.imgSrc} alt={tile.title}/>
-                                <GridListTileBar
-                                title={tile.title}
-                                subtitle={<span>{tile.subTitle}</span>}
-                                actionIcon={
-                                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon} onClick={() => cardClicked(tile.link)}>
-                                    <InfoIcon />
-                                    </IconButton>
-                                }
-                                />
-                            </GridListTile>
-                            ))}
-                        </GridList>
-                    </div>
-                );
-            }
-            }
-            </LoadContent>
-        </div>
-    );
-        
+  return(
+      <div>
+          <Helmet>
+              <title>Dylan Tyrie-Dron Portfolio Site</title>
+              <meta name="description" content="A carousel of interactive cards that will direct to social channels used to connect with me."></meta>
+          </Helmet>
+          <div>  
+              <Hero title={props.title} subTitle={props.subTitle} text={props.text} className={classes.Hero}/>                      
+              {/* <Carousel insta={data} /> */}
+              <ImageList className={classes.imageList} >                          
+                {tileData.map((tile) => (
+                    <ImageListItem key={tile.title}  className='container'>
+                      <img src={tile.imgSrc} alt={tile.title} onClick={() => cardClicked(tile.link)} className={classes.image}/>
+                      <div className="overlay">
+                      </div>
+                      <ImageListItemBar title={tile.title} subtitle={<span>{tile.subTitle}</span>} />
+                    </ImageListItem>
+                ))}
+              </ImageList>
+          </div>
+      </div>
+  );  
 }
 export default HomePage;

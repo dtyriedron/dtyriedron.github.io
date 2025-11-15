@@ -7,7 +7,6 @@ import data from '../assests/data/Hobbies.json';
 function Hobby(){
     var url = new URL(window.location.href);
     var param = url.searchParams.get("pos");
-    console.log(data[param].name);
     return(
         <div>
             <Helmet>

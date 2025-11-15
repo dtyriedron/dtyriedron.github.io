@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {Router, Route, Link} from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import './App.css';
-import { createMuiTheme, makeStyles, ThemeProvider } from "@material-ui/core";
+import { createTheme, makeStyles, ThemeProvider } from "@material-ui/core";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -33,7 +33,6 @@ import {
   deepOrange
 } from "@material-ui/core/colors";
 
-import Footer from './components/Footer';
 import Home from './pages/HomePage';
 import About from './pages/AboutPage';
 // import Contact from './pages/ContactPage';
@@ -41,6 +40,9 @@ import Portfolio from './pages/PortfolioMainPage';
 import Achievements from './pages/AchievementsPage';
 import Hobbies from './pages/HobbiesPage';
 import Project from './pages/PortfolioPage';
+
+import history from './History';
+import Footer from './components/Footer';
 
 const drawerWidth = 240;
 
@@ -110,7 +112,7 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4)
+    paddingBottom: theme.spacing(4),
   },
   paper: {
     padding: theme.spacing(2),
@@ -130,7 +132,7 @@ function App(){
   const mainPrimaryColor = darkState ? lightBlue[500] : orange[500];
   const mainSecondaryColor = darkState ? deepPurple[500] : deepOrange[900];
   const classes = useStyles();
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: palletType,
       primary: {
@@ -209,7 +211,7 @@ function App(){
           <meta name="description" content="A simple React website showcasing where to connect with me, my experiences, achievements and hobbies."></meta>
         </Helmet>
       <CssBaseline />
-        <BrowserRouter >
+        <Router history={history}>
           <AppBar position="absolute"
             className={clsx(classes.appBar, open && classes.appBarShift)}>
             <Toolbar className={classes.toolbar}>
@@ -250,11 +252,11 @@ function App(){
               <div className={classes.appBarSpacer} />
               <Container maxWidth="lg" className={classes.container}>
                 <Grid>
-                  <Route exact path={process.env.PUBLIC_URL + '/'} render={()=> <Home title="Dylan Tyrie-Dron" subTitle='Graduate Software Engineer' color="inherit"/>} />
+                  <Route exact path={process.env.PUBLIC_URL + '/'} render={()=> <Home title="Dylan Tyrie-Dron" subTitle='Software Engineer' color="inherit"/>} />
                   <Route path={process.env.PUBLIC_URL + '/about'} render={()=> <About title='About me'/>}/>
-                  <Route path={process.env.PUBLIC_URL + '/portfolio'} render={()=> <Portfolio title='My Projects!' />}/>
-                  <Route path={process.env.PUBLIC_URL + '/achievements'} render={()=> <Achievements title='My Achievements!'/>}/>
-                  <Route path={process.env.PUBLIC_URL + '/hobbies'} render={()=> <Hobbies title='My Interests!' />}/>
+                  <Route path={process.env.PUBLIC_URL + '/portfolio'} render={()=> <Portfolio title='My Projects' />}/>
+                  <Route path={process.env.PUBLIC_URL + '/achievements'} render={()=> <Achievements title='My Achievements'/>}/>
+                  <Route path={process.env.PUBLIC_URL + '/hobbies'} render={()=> <Hobbies title='My Interests' />}/>
                   <Route path={process.env.PUBLIC_URL + '/project'} render={()=> <Project />}/>
                   {/* <Route path={process.env.PUBLIC_URL + '/contact'} render={()=> <Contact title={this.state.contact.title}/>}/>
                   <Route path={process.env.PUBLIC_URL + '/achievement'} render={() => <Achievement/>}/>
@@ -263,7 +265,7 @@ function App(){
             </Container>
             <Footer color="inherit"/>
           </main>
-      </BrowserRouter>
+      </Router>
       </div>
     </ThemeProvider >
   );

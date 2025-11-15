@@ -3,20 +3,20 @@
         "name":"Playing games",
         "description": "I like playing a few games under different genres."
     },
+        {
+        "name": "Reading Books",
+        "description":"I read the odd book once in a while."
+    },
     {
-        "name": "Small programming projects", 
+        "name": "Small Programming Projects", 
         "description": "If I have free time I often like to try new programming languages and ideas that I have."
     },
     {
-        "name":"Triathlon training",
+        "name":"Triathlon Training",
         "description": "I like all sport and therefore have become very interested in multisport activities such as triathlons. I like set small goals in each triathlon sport and often train at least two disciplines a week."
     },
     {
-        "name": "Watching movies",
+        "name": "Watching Movies",
         "description": "I like watching movies from time to time."
-    },
-    {
-        "name": "Reading books",
-        "description":"I read the odd book once in a while."
     }
 ]

@@ -19,8 +19,6 @@ function PortfolioMainPage(props){
             ]}>
             {
             ({ loading, error, data }) => {
-                console.log(data);
-
                 if (loading) return (
                     <div>
                         <Hero title={props.title} subTitle={props.subTitle} text={props.text}/>

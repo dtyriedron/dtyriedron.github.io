@@ -1,26 +1,22 @@
 [
     {
+        "name": "App For Small Oil Company",
+        "description": "Created a small app for an oil company that helped potenitally save £45 million for the company. This was based on optimising total measured depth by placing drill oil centres in optimal loactions."
+    },
+    {
+        "name": "ENTC Mallorca Triathlon",
+        "description": "Came in fourth place in my first triathlon in a small event that our trithlon team hosted during a training camp in Mallorca."
+    },
+    {
         "name":"Meadows Marathon",
-        "description": "On March 3rd 2019 I completed the Meadows marathon in 4 hours 45 minutes and 19 seconds (unofficial time). "
+        "description": "On March 3rd 2019 I completed the Meadows Marathon in 4 hours 45 minutes and 19 seconds."
     },
     {
         "name":"NC500",
-        "description": "After the UK Covid-19 lockdown during the summer of 2020, a group of 5 of us did Scotland's NC500 on bikes. We camped for 7 nights and cycled every day inbetween for a total of 8 days cycling around 100km per day."
+        "description": "After the UK Covid-19 lockdown during the summer of 2020, a group of 5 of us did Scotland's NC500 on bikes. We camped for 7 nights and cycled every day inbetween for a total of 8 days cycling at around 100km per day."
     },
     {
         "name":"Stirling Aquathon",
         "description": "Competed in my first aquathon in Stirling in 2018. I Came in last place but probably had the best finishing smile."
-    },
-    {
-        "name": "ENTC Mallorca Triathlon",
-        "description": "Came in fourth place in my first triathlon in a small event that our trithlon team hosted for ourselves."
-    },
-    {
-        "name": "App for small oil company",
-        "description": "created a small app for an oil company that helped potenitally save £45 million for the company. This was based on optimising total measured depth by place oil centres in optimal loactions."
-    },
-    {
-        "name": "Under 14s basketball and dodgeball tournament",
-        "description": "As an S5 in secondary school, a few helpers and I worked together to hosted the tournament by setting up equipment, refereeing and keeping track of teams' scores."
     }
 ]
